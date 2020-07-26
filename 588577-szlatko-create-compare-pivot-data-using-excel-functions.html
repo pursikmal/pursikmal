@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html class='v2' dir='ltr' lang='en' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<link href='https://www.blogger.com/static/v1/widgets/1243919952-css_bundle_v2.css' rel='stylesheet' type='text/css'/>
+<meta content='width=1100' name='viewport'/>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<meta content='blogger' name='generator'/>
+<link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+<link href='588577-szlatko-create-compare-pivot-data-using-excel-functions.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="Data Analysis &amp; Reports - Atom" href="/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="Data Analysis &amp; Reports - RSS" href="/feeds/posts/default@alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="Data Analysis &amp; Reports - Atom" href="https://www.blogger.com/feeds/1440079477592342156/posts/default" />
+
+<link rel="alternate" type="application/atom+xml" title="Data Analysis &amp; Reports - Atom" href="/feeds/7969638200133715231/comments/default" />
+<!--[if IE]><script type="text/javascript" src="https://www.blogger.com/static/v1/jsbin/4118812863-ieretrofit.js"></script>
+<![endif]-->
+<link href='https://4.bp.blogspot.com/-YMr5ndAaZJg/Xwu3OEaHdOI/AAAAAAAALec/bc-jS9QKZBEUjPUta55VIzHUV0v4NK7NgCLcBGAsYHQ/s400/create-compare-pivot-data-using-excel-functions.jpg' rel='image_src'/>
+<meta content='https://data-analysis-and-reports.blogspot.com/2020/07/588577-szlatko-create-compare-pivot-data-using-excel-functions.html' property='og:url'/>
+<meta content='Create,Compare,Pivot  Data  Using Excel Functions' property='og:title'/>
+<meta content='          About:   I will do anything you need in a excel spreadsheet. To name the top: 1.Pivot table 2.Filters 3.Conditional formating 4. F...' property='og:description'/>
+<meta content='https://4.bp.blogspot.com/-YMr5ndAaZJg/Xwu3OEaHdOI/AAAAAAAALec/bc-jS9QKZBEUjPUta55VIzHUV0v4NK7NgCLcBGAsYHQ/w1200-h630-p-k-no-nu/create-compare-pivot-data-using-excel-functions.jpg' property='og:image'/>
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>Create,Compare,Pivot  Data  Using Excel Functions : Data Analysis &amp; Reports</title>
+<style id='page-skin-1' type='text/css'><!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Awesome Inc.
+Designer: Tina Chen
+URL:      tinachen.org
+----------------------------------------------- */
+/* Variable definitions
+====================
+<Variable name="keycolor" description="Main Color" type="color" default="#ffffff"/>
+<Group description="Page" selector="body">
+<Variable name="body.font" description="Font" type="font"
+default="normal normal 13px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="body.background.color" description="Background Color" type="color" default="#000000"/>
+<Variable name="body.text.color" description="Text Color" type="color" default="#ffffff"/>
+</Group>
+<Group description="Links" selector=".main-inner">
+<Variable name="link.color" description="Link Color" type="color" default="#888888"/>
+<Variable name="link.visited.color" description="Visited Color" type="color" default="#444444"/>
+<Variable name="link.hover.color" description="Hover Color" type="color" default="#cccccc"/>
+</Group>
+<Group description="Blog Title" selector=".header h1">
+<Variable name="header.font" description="Title Font" type="font"
+default="normal bold 40px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="header.text.color" description="Title Color" type="color" default="#ffffff" />
+<Variable name="header.background.color" description="Header Background" type="color" default="transparent" />
+</Group>
+<Group description="Blog Description" selector=".header .description">
+<Variable name="description.font" description="Font" type="font"
+default="normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="description.text.color" description="Text Color" type="color"
+default="#ffffff" />
+</Group>
+<Group description="Tabs Text" selector=".tabs-inner .widget li a">
+<Variable name="tabs.font" description="Font" type="font"
+default="normal bold 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="tabs.text.color" description="Text Color" type="color" default="#ffffff"/>
+<Variable name="tabs.selected.text.color" description="Selected Color" type="color" default="#ffffff"/>
+</Group>
+<Group description="Tabs Background" selector=".tabs-outer .PageList">
+<Variable name="tabs.background.color" description="Background Color" type="color" default="#141414"/>
+<Variable name="tabs.selected.background.color" description="Selected Color" type="color" default="#444444"/>
+<Variable name="tabs.border.color" description="Border Color" type="color" default="#222222"/>
+</Group>
+<Group description="Date Header" selector=".main-inner .widget h2.date-header, .main-inner .widget h2.date-header span">
+<Variable name="date.font" description="Font" type="font"
+default="normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="date.text.color" description="Text Color" type="color" default="#666666"/>
+<Variable name="date.border.color" description="Border Color" type="color" default="#222222"/>
+</Group>
+<Group description="Post Title" selector="h3.post-title, h4, h3.post-title a">
+<Variable name="post.title.font" description="Font" type="font"
+default="normal bold 22px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="post.title.text.color" description="Text Color" type="color" default="#ffffff"/>
+</Group>
+<Group description="Post Background" selector=".post">
+<Variable name="post.background.color" description="Background Color" type="color" default="#141414" />
+<Variable name="post.border.color" description="Border Color" type="color" default="#222222" />
+<Variable name="post.border.bevel.color" description="Bevel Color" type="color" default="#222222"/>
+</Group>
+<Group description="Gadget Title" selector="h2">
+<Variable name="widget.title.font" description="Font" type="font"
+default="normal bold 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="widget.title.text.color" description="Text Color" type="color" default="#ffffff"/>
+</Group>
+<Group description="Gadget Text" selector=".sidebar .widget">
+<Variable name="widget.font" description="Font" type="font"
+default="normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif"/>
+<Variable name="widget.text.color" description="Text Color" type="color" default="#ffffff"/>
+<Variable name="widget.alternate.text.color" description="Alternate Color" type="color" default="#666666"/>
+</Group>
+<Group description="Gadget Links" selector=".sidebar .widget">
+<Variable name="widget.link.color" description="Link Color" type="color" default="#888888"/>
+<Variable name="widget.link.visited.color" description="Visited Color" type="color" default="#444444"/>
+<Variable name="widget.link.hover.color" description="Hover Color" type="color" default="#cccccc"/>
+</Group>
+<Group description="Gadget Background" selector=".sidebar .widget">
+<Variable name="widget.background.color" description="Background Color" type="color" default="#141414"/>
+<Variable name="widget.border.color" description="Border Color" type="color" default="#222222"/>
+<Variable name="widget.border.bevel.color" description="Bevel Color" type="color" default="#000000"/>
+</Group>
+<Group description="Sidebar Background" selector=".column-left-inner .column-right-inner">
+<Variable name="widget.outer.background.color" description="Background Color" type="color" default="transparent" />
+</Group>
+<Group description="Images" selector=".main-inner">
+<Variable name="image.background.color" description="Background Color" type="color" default="transparent"/>
+<Variable name="image.border.color" description="Border Color" type="color" default="transparent"/>
+</Group>
+<Group description="Feed" selector=".blog-feeds">
+<Variable name="feed.text.color" description="Text Color" type="color" default="#ffffff"/>
+</Group>
+<Group description="Feed Links" selector=".blog-feeds">
+<Variable name="feed.link.color" description="Link Color" type="color" default="#888888"/>
+<Variable name="feed.link.visited.color" description="Visited Color" type="color" default="#444444"/>
+<Variable name="feed.link.hover.color" description="Hover Color" type="color" default="#cccccc"/>
+</Group>
+<Group description="Pager" selector=".blog-pager">
+<Variable name="pager.background.color" description="Background Color" type="color" default="#141414" />
+</Group>
+<Group description="Footer" selector=".footer-outer">
+<Variable name="footer.background.color" description="Background Color" type="color" default="#141414" />
+<Variable name="footer.text.color" description="Text Color" type="color" default="#ffffff" />
+</Group>
+<Variable name="title.shadow.spread" description="Title Shadow" type="length" default="-1px" min="-1px" max="100px"/>
+<Variable name="body.background" description="Body Background" type="background"
+color="#000000"
+default="$(color) none repeat scroll top left"/>
+<Variable name="body.background.gradient.cap" description="Body Gradient Cap" type="url"
+default="none"/>
+<Variable name="body.background.size" description="Body Background Size" type="string" default="auto"/>
+<Variable name="tabs.background.gradient" description="Tabs Background Gradient" type="url"
+default="none"/>
+<Variable name="header.background.gradient" description="Header Background Gradient" type="url" default="none" />
+<Variable name="header.padding.top" description="Header Top Padding" type="length" default="22px" min="0" max="100px"/>
+<Variable name="header.margin.top" description="Header Top Margin" type="length" default="0" min="0" max="100px"/>
+<Variable name="header.margin.bottom" description="Header Bottom Margin" type="length" default="0" min="0" max="100px"/>
+<Variable name="widget.padding.top" description="Widget Padding Top" type="length" default="8px" min="0" max="20px"/>
+<Variable name="widget.padding.side" description="Widget Padding Side" type="length" default="15px" min="0" max="100px"/>
+<Variable name="widget.outer.margin.top" description="Widget Top Margin" type="length" default="0" min="0" max="100px"/>
+<Variable name="widget.outer.background.gradient" description="Gradient" type="url" default="none" />
+<Variable name="widget.border.radius" description="Gadget Border Radius" type="length" default="0" min="0" max="100px"/>
+<Variable name="outer.shadow.spread" description="Outer Shadow Size" type="length" default="0" min="0" max="100px"/>
+<Variable name="date.header.border.radius.top" description="Date Header Border Radius Top" type="length" default="0" min="0" max="100px"/>
+<Variable name="date.header.position" description="Date Header Position" type="length" default="15px" min="0" max="100px"/>
+<Variable name="date.space" description="Date Space" type="length" default="30px" min="0" max="100px"/>
+<Variable name="date.position" description="Date Float" type="string" default="static" />
+<Variable name="date.padding.bottom" description="Date Padding Bottom" type="length" default="0" min="0" max="100px"/>
+<Variable name="date.border.size" description="Date Border Size" type="length" default="0" min="0" max="10px"/>
+<Variable name="date.background" description="Date Background" type="background" color="transparent"
+default="$(color) none no-repeat scroll top left" />
+<Variable name="date.first.border.radius.top" description="Date First top radius" type="length" default="0" min="0" max="100px"/>
+<Variable name="date.last.space.bottom" description="Date Last Space Bottom" type="length"
+default="20px" min="0" max="100px"/>
+<Variable name="date.last.border.radius.bottom" description="Date Last bottom radius" type="length" default="0" min="0" max="100px"/>
+<Variable name="post.first.padding.top" description="First Post Padding Top" type="length" default="0" min="0" max="100px"/>
+<Variable name="image.shadow.spread" description="Image Shadow Size" type="length" default="0" min="0" max="100px"/>
+<Variable name="image.border.radius" description="Image Border Radius" type="length" default="0" min="0" max="100px"/>
+<Variable name="separator.outdent" description="Separator Outdent" type="length" default="15px" min="0" max="100px"/>
+<Variable name="title.separator.border.size" description="Widget Title Border Size" type="length" default="1px" min="0" max="10px"/>
+<Variable name="list.separator.border.size" description="List Separator Border Size" type="length" default="1px" min="0" max="10px"/>
+<Variable name="shadow.spread" description="Shadow Size" type="length" default="0" min="0" max="100px"/>
+<Variable name="startSide" description="Side where text starts in blog language" type="automatic" default="left"/>
+<Variable name="endSide" description="Side where text ends in blog language" type="automatic" default="right"/>
+<Variable name="date.side" description="Side where date header is placed" type="string" default="right"/>
+<Variable name="pager.border.radius.top" description="Pager Border Top Radius" type="length" default="0" min="0" max="100px"/>
+<Variable name="pager.space.top" description="Pager Top Space" type="length" default="1em" min="0" max="20em"/>
+<Variable name="footer.background.gradient" description="Background Gradient" type="url" default="none" />
+<Variable name="mobile.background.size" description="Mobile Background Size" type="string"
+default="auto"/>
+<Variable name="mobile.background.overlay" description="Mobile Background Overlay" type="string"
+default="transparent none repeat scroll top left"/>
+<Variable name="mobile.button.color" description="Mobile Button Color" type="color" default="#ffffff" />
+*/
+/* Content
+----------------------------------------------- */
+body {
+font: normal normal 13px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #ffffff;
+background: #000000 url(https://resources.blogblog.com/blogblog/data/1kt/awesomeinc/body_background_dark.png) repeat scroll top left;
+}
+html body .content-outer {
+min-width: 0;
+max-width: 100%;
+width: 100%;
+}
+a:link {
+text-decoration: none;
+color: #888888;
+}
+a:visited {
+text-decoration: none;
+color: #444444;
+}
+a:hover {
+text-decoration: underline;
+color: #cccccc;
+}
+.body-fauxcolumn-outer .cap-top {
+position: absolute;
+z-index: 1;
+height: 276px;
+width: 100%;
+background: transparent url(https://resources.blogblog.com/blogblog/data/1kt/awesomeinc/body_gradient_dark.png) repeat-x scroll top left;
+_background-image: none;
+}
+/* Columns
+----------------------------------------------- */
+.content-inner {
+padding: 0;
+}
+.header-inner .section {
+margin: 0 16px;
+}
+.tabs-inner .section {
+margin: 0 16px;
+}
+.main-inner {
+padding-top: 30px;
+}
+.main-inner .column-center-inner,
+.main-inner .column-left-inner,
+.main-inner .column-right-inner {
+padding: 0 5px;
+}
+*+html body .main-inner .column-center-inner {
+margin-top: -30px;
+}
+#layout .main-inner .column-center-inner {
+margin-top: 0;
+}
+/* Header
+----------------------------------------------- */
+.header-outer {
+margin: 0 0 0 0;
+background: transparent none repeat scroll 0 0;
+}
+.Header h1 {
+font: normal bold 40px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #ffffff;
+text-shadow: 0 0 -1px #000000;
+}
+.Header h1 a {
+color: #ffffff;
+}
+.Header .description {
+font: normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #ffffff;
+}
+.header-inner .Header .titlewrapper,
+.header-inner .Header .descriptionwrapper {
+padding-left: 0;
+padding-right: 0;
+margin-bottom: 0;
+}
+.header-inner .Header .titlewrapper {
+padding-top: 22px;
+}
+/* Tabs
+----------------------------------------------- */
+.tabs-outer {
+overflow: hidden;
+position: relative;
+background: #141414 none repeat scroll 0 0;
+}
+#layout .tabs-outer {
+overflow: visible;
+}
+.tabs-cap-top, .tabs-cap-bottom {
+position: absolute;
+width: 100%;
+border-top: 1px solid #222222;
+}
+.tabs-cap-bottom {
+bottom: 0;
+}
+.tabs-inner .widget li a {
+display: inline-block;
+margin: 0;
+padding: .6em 1.5em;
+font: normal bold 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #ffffff;
+border-top: 1px solid #222222;
+border-bottom: 1px solid #222222;
+border-left: 1px solid #222222;
+height: 16px;
+line-height: 16px;
+}
+.tabs-inner .widget li:last-child a {
+border-right: 1px solid #222222;
+}
+.tabs-inner .widget li.selected a, .tabs-inner .widget li a:hover {
+background: #444444 none repeat-x scroll 0 -100px;
+color: #ffffff;
+}
+/* Headings
+----------------------------------------------- */
+h2 {
+font: normal bold 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #ffffff;
+}
+/* Widgets
+----------------------------------------------- */
+.main-inner .section {
+margin: 0 27px;
+padding: 0;
+}
+.main-inner .column-left-outer,
+.main-inner .column-right-outer {
+margin-top: 0;
+}
+#layout .main-inner .column-left-outer,
+#layout .main-inner .column-right-outer {
+margin-top: 0;
+}
+.main-inner .column-left-inner,
+.main-inner .column-right-inner {
+background: transparent none repeat 0 0;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-goog-ms-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-moz-border-radius: 0;
+-webkit-border-radius: 0;
+-goog-ms-border-radius: 0;
+border-radius: 0;
+}
+#layout .main-inner .column-left-inner,
+#layout .main-inner .column-right-inner {
+margin-top: 0;
+}
+.sidebar .widget {
+font: normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #ffffff;
+}
+.sidebar .widget a:link {
+color: #888888;
+}
+.sidebar .widget a:visited {
+color: #444444;
+}
+.sidebar .widget a:hover {
+color: #cccccc;
+}
+.sidebar .widget h2 {
+text-shadow: 0 0 -1px #000000;
+}
+.main-inner .widget {
+background-color: #141414;
+border: 1px solid #222222;
+padding: 0 15px 15px;
+margin: 20px -16px;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-goog-ms-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-moz-border-radius: 0;
+-webkit-border-radius: 0;
+-goog-ms-border-radius: 0;
+border-radius: 0;
+}
+.main-inner .widget h2 {
+margin: 0 -15px;
+padding: .6em 15px .5em;
+border-bottom: 1px solid #000000;
+}
+.footer-inner .widget h2 {
+padding: 0 0 .4em;
+border-bottom: 1px solid #000000;
+}
+.main-inner .widget h2 + div, .footer-inner .widget h2 + div {
+border-top: 1px solid #222222;
+padding-top: 8px;
+}
+.main-inner .widget .widget-content {
+margin: 0 -15px;
+padding: 7px 15px 0;
+}
+.main-inner .widget ul, .main-inner .widget #ArchiveList ul.flat {
+margin: -8px -15px 0;
+padding: 0;
+list-style: none;
+}
+.main-inner .widget #ArchiveList {
+margin: -8px 0 0;
+}
+.main-inner .widget ul li, .main-inner .widget #ArchiveList ul.flat li {
+padding: .5em 15px;
+text-indent: 0;
+color: #666666;
+border-top: 1px solid #222222;
+border-bottom: 1px solid #000000;
+}
+.main-inner .widget #ArchiveList ul li {
+padding-top: .25em;
+padding-bottom: .25em;
+}
+.main-inner .widget ul li:first-child, .main-inner .widget #ArchiveList ul.flat li:first-child {
+border-top: none;
+}
+.main-inner .widget ul li:last-child, .main-inner .widget #ArchiveList ul.flat li:last-child {
+border-bottom: none;
+}
+.post-body {
+position: relative;
+}
+.main-inner .widget .post-body ul {
+padding: 0 2.5em;
+margin: .5em 0;
+list-style: disc;
+}
+.main-inner .widget .post-body ul li {
+padding: 0.25em 0;
+margin-bottom: .25em;
+color: #ffffff;
+border: none;
+}
+.footer-inner .widget ul {
+padding: 0;
+list-style: none;
+}
+.widget .zippy {
+color: #666666;
+}
+/* Posts
+----------------------------------------------- */
+body .main-inner .Blog {
+padding: 0;
+margin-bottom: 1em;
+background-color: transparent;
+border: none;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+-goog-ms-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+.main-inner .section:last-child .Blog:last-child {
+padding: 0;
+margin-bottom: 1em;
+}
+.main-inner .widget h2.date-header {
+margin: 0 -15px 1px;
+padding: 0 0 0 0;
+font: normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #666666;
+background: transparent none no-repeat scroll top left;
+border-top: 0 solid #222222;
+border-bottom: 1px solid #000000;
+-moz-border-radius-topleft: 0;
+-moz-border-radius-topright: 0;
+-webkit-border-top-left-radius: 0;
+-webkit-border-top-right-radius: 0;
+border-top-left-radius: 0;
+border-top-right-radius: 0;
+position: static;
+bottom: 100%;
+right: 15px;
+text-shadow: 0 0 -1px #000000;
+}
+.main-inner .widget h2.date-header span {
+font: normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+display: block;
+padding: .5em 15px;
+border-left: 0 solid #222222;
+border-right: 0 solid #222222;
+}
+.date-outer {
+position: relative;
+margin: 30px 0 20px;
+padding: 0 15px;
+background-color: #141414;
+border: 1px solid #222222;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-goog-ms-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-moz-border-radius: 0;
+-webkit-border-radius: 0;
+-goog-ms-border-radius: 0;
+border-radius: 0;
+}
+.date-outer:first-child {
+margin-top: 0;
+}
+.date-outer:last-child {
+margin-bottom: 20px;
+-moz-border-radius-bottomleft: 0;
+-moz-border-radius-bottomright: 0;
+-webkit-border-bottom-left-radius: 0;
+-webkit-border-bottom-right-radius: 0;
+-goog-ms-border-bottom-left-radius: 0;
+-goog-ms-border-bottom-right-radius: 0;
+border-bottom-left-radius: 0;
+border-bottom-right-radius: 0;
+}
+.date-posts {
+margin: 0 -15px;
+padding: 0 15px;
+clear: both;
+}
+.post-outer, .inline-ad {
+border-top: 1px solid #222222;
+margin: 0 -15px;
+padding: 15px 15px;
+}
+.post-outer {
+padding-bottom: 10px;
+}
+.post-outer:first-child {
+padding-top: 0;
+border-top: none;
+}
+.post-outer:last-child, .inline-ad:last-child {
+border-bottom: none;
+}
+.post-body {
+position: relative;
+}
+.post-body img {
+padding: 8px;
+background: #222222;
+border: 1px solid transparent;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-moz-border-radius: 0;
+-webkit-border-radius: 0;
+border-radius: 0;
+}
+h3.post-title, h4 {
+font: normal bold 22px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #ffffff;
+}
+h3.post-title a {
+font: normal bold 22px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #ffffff;
+}
+h3.post-title a:hover {
+color: #cccccc;
+text-decoration: underline;
+}
+.post-header {
+margin: 0 0 1em;
+}
+.post-body {
+line-height: 1.4;
+}
+.post-outer h2 {
+color: #ffffff;
+}
+.post-footer {
+margin: 1.5em 0 0;
+}
+#blog-pager {
+padding: 15px;
+font-size: 120%;
+background-color: #141414;
+border: 1px solid #222222;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-goog-ms-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-moz-border-radius: 0;
+-webkit-border-radius: 0;
+-goog-ms-border-radius: 0;
+border-radius: 0;
+-moz-border-radius-topleft: 0;
+-moz-border-radius-topright: 0;
+-webkit-border-top-left-radius: 0;
+-webkit-border-top-right-radius: 0;
+-goog-ms-border-top-left-radius: 0;
+-goog-ms-border-top-right-radius: 0;
+border-top-left-radius: 0;
+border-top-right-radius-topright: 0;
+margin-top: 1em;
+}
+.blog-feeds, .post-feeds {
+margin: 1em 0;
+text-align: center;
+color: #ffffff;
+}
+.blog-feeds a, .post-feeds a {
+color: #888888;
+}
+.blog-feeds a:visited, .post-feeds a:visited {
+color: #444444;
+}
+.blog-feeds a:hover, .post-feeds a:hover {
+color: #cccccc;
+}
+.post-outer .comments {
+margin-top: 2em;
+}
+/* Comments
+----------------------------------------------- */
+.comments .comments-content .icon.blog-author {
+background-repeat: no-repeat;
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB9sLFwMeCjjhcOMAAAD+SURBVDjLtZSvTgNBEIe/WRRnm3U8RC1neQdsm1zSBIU9VVF1FkUguQQsD9ITmD7ECZIJSE4OZo9stoVjC/zc7ky+zH9hXwVwDpTAWWLrgS3QAe8AZgaAJI5zYAmc8r0G4AHYHQKVwII8PZrZFsBFkeRCABYiMh9BRUhnSkPTNCtVXYXURi1FpBDgArj8QU1eVXUzfnjv7yP7kwu1mYrkWlU33vs1QNu2qU8pwN0UpKoqokjWwCztrMuBhEhmh8bD5UDqur75asbcX0BGUB9/HAMB+r32hznJgXy2v0sGLBcyAJ1EK3LFcbo1s91JeLwAbwGYu7TP/3ZGfnXYPgAVNngtqatUNgAAAABJRU5ErkJggg==);
+}
+.comments .comments-content .loadmore a {
+border-top: 1px solid #222222;
+border-bottom: 1px solid #222222;
+}
+.comments .continue {
+border-top: 2px solid #222222;
+}
+/* Footer
+----------------------------------------------- */
+.footer-outer {
+margin: -0 0 -1px;
+padding: 0 0 0;
+color: #ffffff;
+overflow: hidden;
+}
+.footer-fauxborder-left {
+border-top: 1px solid #222222;
+background: #141414 none repeat scroll 0 0;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+-goog-ms-box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+margin: 0 -0;
+}
+/* Mobile
+----------------------------------------------- */
+body.mobile {
+background-size: auto;
+}
+.mobile .body-fauxcolumn-outer {
+background: transparent none repeat scroll top left;
+}
+*+html body.mobile .main-inner .column-center-inner {
+margin-top: 0;
+}
+.mobile .main-inner .widget {
+padding: 0 0 15px;
+}
+.mobile .main-inner .widget h2 + div,
+.mobile .footer-inner .widget h2 + div {
+border-top: none;
+padding-top: 0;
+}
+.mobile .footer-inner .widget h2 {
+padding: 0.5em 0;
+border-bottom: none;
+}
+.mobile .main-inner .widget .widget-content {
+margin: 0;
+padding: 7px 0 0;
+}
+.mobile .main-inner .widget ul,
+.mobile .main-inner .widget #ArchiveList ul.flat {
+margin: 0 -15px 0;
+}
+.mobile .main-inner .widget h2.date-header {
+right: 0;
+}
+.mobile .date-header span {
+padding: 0.4em 0;
+}
+.mobile .date-outer:first-child {
+margin-bottom: 0;
+border: 1px solid #222222;
+-moz-border-radius-topleft: 0;
+-moz-border-radius-topright: 0;
+-webkit-border-top-left-radius: 0;
+-webkit-border-top-right-radius: 0;
+-goog-ms-border-top-left-radius: 0;
+-goog-ms-border-top-right-radius: 0;
+border-top-left-radius: 0;
+border-top-right-radius: 0;
+}
+.mobile .date-outer {
+border-color: #222222;
+border-width: 0 1px 1px;
+}
+.mobile .date-outer:last-child {
+margin-bottom: 0;
+}
+.mobile .main-inner {
+padding: 0;
+}
+.mobile .header-inner .section {
+margin: 0;
+}
+.mobile .post-outer, .mobile .inline-ad {
+padding: 5px 0;
+}
+.mobile .tabs-inner .section {
+margin: 0 10px;
+}
+.mobile .main-inner .widget h2 {
+margin: 0;
+padding: 0;
+}
+.mobile .main-inner .widget h2.date-header span {
+padding: 0;
+}
+.mobile .main-inner .widget .widget-content {
+margin: 0;
+padding: 7px 0 0;
+}
+.mobile #blog-pager {
+border: 1px solid transparent;
+background: #141414 none repeat scroll 0 0;
+}
+.mobile .main-inner .column-left-inner,
+.mobile .main-inner .column-right-inner {
+background: transparent none repeat 0 0;
+-moz-box-shadow: none;
+-webkit-box-shadow: none;
+-goog-ms-box-shadow: none;
+box-shadow: none;
+}
+.mobile .date-posts {
+margin: 0;
+padding: 0;
+}
+.mobile .footer-fauxborder-left {
+margin: 0;
+border-top: inherit;
+}
+.mobile .main-inner .section:last-child .Blog:last-child {
+margin-bottom: 0;
+}
+.mobile-index-contents {
+color: #ffffff;
+}
+.mobile .mobile-link-button {
+background: #888888 none repeat scroll 0 0;
+}
+.mobile-link-button a:link, .mobile-link-button a:visited {
+color: #ffffff;
+}
+.mobile .tabs-inner .PageList .widget-content {
+background: transparent;
+border-top: 1px solid;
+border-color: #222222;
+color: #ffffff;
+}
+.mobile .tabs-inner .PageList .widget-content .pagelist-arrow {
+border-left: 1px solid #222222;
+}
+
+--></style>
+<style id='template-skin-1' type='text/css'><!--
+body {
+min-width: 960px;
+}
+.content-outer, .content-fauxcolumn-outer, .region-inner {
+min-width: 960px;
+max-width: 960px;
+_width: 960px;
+}
+.main-inner .columns {
+padding-left: 0px;
+padding-right: 310px;
+}
+.main-inner .fauxcolumn-center-outer {
+left: 0px;
+right: 310px;
+/* IE6 does not respect left and right together */
+_width: expression(this.parentNode.offsetWidth -
+parseInt("0px") -
+parseInt("310px") + 'px');
+}
+.main-inner .fauxcolumn-left-outer {
+width: 0px;
+}
+.main-inner .fauxcolumn-right-outer {
+width: 310px;
+}
+.main-inner .column-left-outer {
+width: 0px;
+right: 100%;
+margin-left: -0px;
+}
+.main-inner .column-right-outer {
+width: 310px;
+margin-right: -310px;
+}
+#layout {
+min-width: 0;
+}
+#layout .content-outer {
+min-width: 0;
+width: 800px;
+}
+#layout .region-inner {
+min-width: 0;
+width: auto;
+}
+body#layout div.add_widget {
+padding: 8px;
+}
+body#layout div.add_widget a {
+margin-left: 32px;
+}
+--></style>
+<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=1440079477592342156&amp;zx=34b275e5-d0d6-4cb8-845f-53b481ccd475' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=1440079477592342156&amp;zx=34b275e5-d0d6-4cb8-845f-53b481ccd475' rel='stylesheet'/></noscript>
+
+</head>
+<body class='loading'>
+<div class='navbar section' id='navbar' name='Navbar'><div class='widget Navbar' data-version='1' id='Navbar1'><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"></div>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+<script type="text/javascript">
+      gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: 'https://www.blogger.com/navbar.g?targetBlogID\x3d1440079477592342156\x26blogName\x3dData+Analysis+%26+Reports\x26publishMode\x3dPUBLISH_MODE_BLOGSPOT\x26navbarType\x3dLIGHT\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttps://data-analysis-and-reports.blogspot.com/search\x26blogLocale\x3den\x26v\x3d2\x26homepageUrl\x3dhttps://data-analysis-and-reports.blogspot.com/\x26targetPostID\x3d7969638200133715231\x26blogPostOrPageUrl\x3dhttps://data-analysis-and-reports.blogspot.com/2020/07/588577-szlatko-create-compare-pivot-data-using-excel-functions.html\x26vt\x3d1907527174119495952',
+              where: document.getElementById("navbar-iframe-container"),
+              id: "navbar-iframe"
+          });
+        }
+      });
+    </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<div class='body-fauxcolumns'>
+<div class='fauxcolumn-outer body-fauxcolumn-outer'>
+<div class='cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left'>
+<div class='fauxborder-right'></div>
+<div class='fauxcolumn-inner'>
+</div>
+</div>
+<div class='cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+</div>
+<div class='content'>
+<div class='content-fauxcolumns'>
+<div class='fauxcolumn-outer content-fauxcolumn-outer'>
+<div class='cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left'>
+<div class='fauxborder-right'></div>
+<div class='fauxcolumn-inner'>
+</div>
+</div>
+<div class='cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+</div>
+<div class='content-outer'>
+<div class='content-cap-top cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left content-fauxborder-left'>
+<div class='fauxborder-right content-fauxborder-right'></div>
+<div class='content-inner'>
+<header>
+<div class='header-outer'>
+<div class='header-cap-top cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left header-fauxborder-left'>
+<div class='fauxborder-right header-fauxborder-right'></div>
+<div class='region-inner header-inner'>
+<div class='header section' id='header' name='Header'><div class='widget Header' data-version='1' id='Header1'>
+<div id='header-inner'>
+<div class='titlewrapper'>
+<h3 class='title'>
+<a href='/index.html'>
+Data Analysis &amp; Reports
+</a>
+</h3>
+</div>
+<div class='descriptionwrapper'>
+<p class='description'><span>
+</span></p>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class='header-cap-bottom cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+</header>
+<div class='tabs-outer'>
+<div class='tabs-cap-top cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left tabs-fauxborder-left'>
+<div class='fauxborder-right tabs-fauxborder-right'></div>
+<div class='region-inner tabs-inner'>
+<div class='tabs no-items section' id='crosscol' name='Cross-Column'></div>
+<div class='tabs no-items section' id='crosscol-overflow' name='Cross-Column 2'></div>
+</div>
+</div>
+<div class='tabs-cap-bottom cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+<div class='main-outer'>
+<div class='main-cap-top cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left main-fauxborder-left'>
+<div class='fauxborder-right main-fauxborder-right'></div>
+<div class='region-inner main-inner'>
+<div class='columns fauxcolumns'>
+<div class='fauxcolumn-outer fauxcolumn-center-outer'>
+<div class='cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left'>
+<div class='fauxborder-right'></div>
+<div class='fauxcolumn-inner'>
+</div>
+</div>
+<div class='cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+<div class='fauxcolumn-outer fauxcolumn-left-outer'>
+<div class='cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left'>
+<div class='fauxborder-right'></div>
+<div class='fauxcolumn-inner'>
+</div>
+</div>
+<div class='cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+<div class='fauxcolumn-outer fauxcolumn-right-outer'>
+<div class='cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left'>
+<div class='fauxborder-right'></div>
+<div class='fauxcolumn-inner'>
+</div>
+</div>
+<div class='cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+<!-- corrects IE6 width calculation -->
+<div class='columns-inner'>
+<div class='column-center-outer'>
+<div class='column-center-inner'>
+<div class='main section' id='main' name='Main'><div class='widget Blog' data-version='1' id='Blog1'>
+<div class='blog-posts hfeed'>
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Sunday, July 12, 2020</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry uncustomized-post-template' itemprop='blogPost' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
+<meta content='https://4.bp.blogspot.com/-YMr5ndAaZJg/Xwu3OEaHdOI/AAAAAAAALec/bc-jS9QKZBEUjPUta55VIzHUV0v4NK7NgCLcBGAsYHQ/s400/create-compare-pivot-data-using-excel-functions.jpg' itemprop='image_url'/>
+<meta content='1440079477592342156' itemprop='blogId'/>
+<meta content='7969638200133715231' itemprop='postId'/>
+<a name='7969638200133715231'></a>
+<h1 class='post-title entry-title' itemprop='name'>
+Create,Compare,Pivot  Data  Using Excel Functions
+</h1>
+<div class='post-header'>
+<div class='post-header-line-1'></div>
+</div>
+<div class='post-body entry-content' id='post-body-7969638200133715231' itemprop='description articleBody'>
+<div class="separator" style="clear: both; text-align: center;"><a href="https://4.bp.blogspot.com/-YMr5ndAaZJg/Xwu3OEaHdOI/AAAAAAAALec/bc-jS9QKZBEUjPUta55VIzHUV0v4NK7NgCLcBGAsYHQ/s400/create-compare-pivot-data-using-excel-functions.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;">
+<img border="0" data-original-height="420" data-original-width="680" height="198" src="https://4.bp.blogspot.com/-YMr5ndAaZJg/Xwu3OEaHdOI/AAAAAAAALec/bc-jS9QKZBEUjPUta55VIzHUV0v4NK7NgCLcBGAsYHQ/s400/create-compare-pivot-data-using-excel-functions.jpg" width="320" /></a></div>
+
+<br><br>
+<br><br>
+<br><br>
+<br>
+<a href="http://srvsgo.com/p/jo8"><img border="0" data-original-height="75" data-original-width="338" height="44" src="https://1.bp.blogspot.com/-mLxf10b-fkI/Xwu3Z9fOgRI/AAAAAAAALeg/jYohxjiwhv0BDsANh6nWse-iPU8N7GoWACLcBGAsYHQ/s320/order.jpg" width="200" /></a>
+<br><br><br>
+
+<h3>About:</h3>
+
+I will do anything you need in a excel spreadsheet.<br></br>To name the top:<br></br>1.Pivot table<br></br>2.Filters<br></br>3.Conditional formating<br></br>4. Function " IF " with all his ramiffications.<br></br>5.Vlookup /Hlookup<br></br>And many others.
+
+<a href="http://srvsgo.com/p/jo8"><img border="0" data-original-height="75" data-original-width="338" height="44" src="https://1.bp.blogspot.com/-mLxf10b-fkI/Xwu3Z9fOgRI/AAAAAAAALeg/jYohxjiwhv0BDsANh6nWse-iPU8N7GoWACLcBGAsYHQ/s320/order.jpg" width="200" /></a>
+
+<h3>Reviews</h3>
+<br>
+:
+:
+:
+:
+:
+<br><br><br>
+<a href="http://srvsgo.com/p/jo8"><img border="0" data-original-height="75" data-original-width="338" height="44" src="https://1.bp.blogspot.com/-mLxf10b-fkI/Xwu3Z9fOgRI/AAAAAAAALeg/jYohxjiwhv0BDsANh6nWse-iPU8N7GoWACLcBGAsYHQ/s320/order.jpg" width="200" /></a>
+
+<br><br><br>
+<a href="588577-szlatko-create-compare-pivot-data-using-excel-functions.html">Create,Compare,Pivot  Data  Using Excel Functions</a>
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'>
+<span class='post-author vcard'>
+Posted by
+<span class='fn' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
+<meta content='https://www.blogger.com/profile/07424820085099638930' itemprop='url'/>
+<a class='g-profile' href='https://www.blogger.com/profile/07424820085099638930' rel='author' title='author profile'>
+<span itemprop='name'>FiverrMan</span>
+</a>
+</span>
+</span>
+<span class='post-timestamp'>
+at
+<meta content='https://data-analysis-and-reports.blogspot.com/2020/07/588577-szlatko-create-compare-pivot-data-using-excel-functions.html' itemprop='url'/>
+<a class='timestamp-link' href='588577-szlatko-create-compare-pivot-data-using-excel-functions.html' rel='bookmark' title='permanent link'><abbr class='published' itemprop='datePublished' title='2020-07-12T18:24:00-07:00'>6:24 PM</abbr></a>
+</span>
+<span class='reaction-buttons'>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-backlinks post-comment-link'>
+</span>
+<span class='post-icons'>
+<span class='item-control blog-admin pid-910348463'>
+<a href='https://www.blogger.com/post-edit.g?blogID=1440079477592342156&postID=7969638200133715231&from=pencil' title='Edit Post'>
+<img alt='' class='icon-action' height='18' src='https://resources.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/>
+</a>
+</span>
+</span>
+<div class='post-share-buttons goog-inline-block'>
+<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=1440079477592342156&postID=7969638200133715231&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=1440079477592342156&postID=7969638200133715231&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=1440079477592342156&postID=7969638200133715231&target=twitter' target='_blank' title='Share to Twitter'><span class='share-button-link-text'>Share to Twitter</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=1440079477592342156&postID=7969638200133715231&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><a class='goog-inline-block share-button sb-pinterest' href='https://www.blogger.com/share-post.g?blogID=1440079477592342156&postID=7969638200133715231&target=pinterest' target='_blank' title='Share to Pinterest'><span class='share-button-link-text'>Share to Pinterest</span></a>
+</div>
+</div>
+<div class='post-footer-line post-footer-line-2'>
+<span class='post-labels'>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'>
+<span class='post-location'>
+</span>
+</div>
+</div>
+</div>
+<div class='comments' id='comments'>
+<a name='comments'></a>
+<h4>No comments:</h4>
+<div id='Blog1_comments-block-wrapper'>
+<dl class='avatar-comment-indent' id='comments-block'>
+</dl>
+</div>
+<p class='comment-footer'>
+<div class='comment-form'>
+<a name='comment-form'></a>
+<h4 id='comment-post-message'>Post a Comment</h4>
+<p>
+</p>
+<a href='https://www.blogger.com/comment-iframe.g?blogID=1440079477592342156&postID=7969638200133715231' id='comment-editor-src'></a>
+<iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='410px' id='comment-editor' name='comment-editor' src='588577-szlatko-create-compare-pivot-data-using-excel-functions.html' width='100%'></iframe>
+<script src='https://www.blogger.com/static/v1/jsbin/978235614-comment_from_post_iframe.js' type='text/javascript'></script>
+<script type='text/javascript'>
+      BLOG_CMT_createIframe('https://www.blogger.com/rpc_relay.html');
+    </script>
+</div>
+</p>
+</div>
+</div>
+
+        </div></div>
+      
+</div>
+<div class='blog-pager' id='blog-pager'>
+<span id='blog-pager-newer-link'>
+<a class='blog-pager-newer-link' href='546327-amanemon-provide-spss-excel-data-entry-service-for-you.html' id='Blog1_blog-pager-newer-link' title='Newer Post'>Newer Post</a>
+</span>
+<span id='blog-pager-older-link'>
+<a class='blog-pager-older-link' href='141183-dilshad-khaliq-do-data-analysis-data-mining-using-python.html' id='Blog1_blog-pager-older-link' title='Older Post'>Older Post</a>
+</span>
+<a class='home-link' href='/index.html'>Home</a>
+</div>
+<div class='clear'></div>
+<div class='post-feeds'>
+<div class='feed-links'>
+Subscribe to:
+<a class='feed-link' href='/feeds/7969638200133715231/comments/default' target='_blank' type='application/atom+xml'>Post Comments (Atom)</a>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class='column-left-outer'>
+<div class='column-left-inner'>
+<aside>
+</aside>
+</div>
+</div>
+<div class='column-right-outer'>
+<div class='column-right-inner'>
+<aside>
+<div class='sidebar section' id='sidebar-right-1'><div class='widget PopularPosts' data-version='1' id='PopularPosts1'>
+<div class='widget-content popular-posts'>
+<ul>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='https://www.blogger.com/rearrange?blogID=1440079477592342156&amp;widgetType=PopularPosts&amp;widgetId=PopularPosts1&amp;action=editWidget&amp;sectionId=sidebar-right-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("PopularPosts1"));' rel='nofollow' target='configPopularPosts1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget FeaturedPost' data-version='1' id='FeaturedPost1'>
+<div class='post-summary'>
+<h3><a href='485726-sheenawaqas-create-an-excel-dashboard-or-excel-spreadsheet.html'>Create An Excel Dashboard Or Excel Spreadsheet</a></h3>
+<p>
+          About:   &#9757;&#160;ONLY FOR CUSTOM ORDERS. ALWAYS MESSAGE ME BEFORE ORDERING&#160; TO DISCUSS YOUR PROJECT SCOPE, SCHEDULE AND COSTS PRIOR ORDE...
+</p>
+<img class='image' src='https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/135630159/original/5843c80e9da9054839e1c67b02db91101517ac6f/create-an-excel-dashboard-or-excel-spreadsheet.png'/>
+</div>
+<style type='text/css'>
+    .image {
+      width: 100%;
+    }
+  </style>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='https://www.blogger.com/rearrange?blogID=1440079477592342156&amp;widgetType=FeaturedPost&amp;widgetId=FeaturedPost1&amp;action=editWidget&amp;sectionId=sidebar-right-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("FeaturedPost1"));' rel='nofollow' target='configFeaturedPost1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget BlogArchive' data-version='1' id='BlogArchive1'>
+<h2>Blog Archive</h2>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive1_ArchiveList'>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>
+
+        &#9660;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='/index.html'>
+2020
+</a>
+<span class='post-count' dir='ltr'>(389)</span>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>
+
+        &#9660;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='index.html'>
+July
+</a>
+<span class='post-count' dir='ltr'>(58)</span>
+<ul class='posts'>
+<li><a href='485726-sheenawaqas-create-an-excel-dashboard-or-excel-spreadsheet.html'>Create An Excel Dashboard Or Excel Spreadsheet</a></li>
+<li><a href='534217-tpsimon-professionally-do-your-web-scraping-tasks.html'>Provide Professional Web Scraping Service</a></li>
+<li><a href='448607-aamirzaman786-develop-geographical-geospatial-and-analytical-gis-maps.html'>Develop Geographical, Geospatial And Analytical Gi...</a></li>
+<li><a href='481009-erivanvazquez-scrape-data-from-your-prefered-website.html'>Scrape Data From Your Prefered Website</a></li>
+<li><a href='227700-zirsha123-outstanding-deep-learning-projects-for-you.html'>Computer Vision ,Tensorflow, Pytorch And Deep Lear...</a></li>
+<li><a href='990932-sherazsaeed580-do-web-scraping-data-collection-and-entry.html'>Email Scraping, Data Mining And Web Research</a></li>
+<li><a href='154849-asadzahoor196-create-excel-spreadsheet-with-formulas-graphs-reports-data-entry.html'>Create Excel Spreadsheet With Formulas, Graphs, Re...</a></li>
+<li><a href='426756-marcosmit97-create-a-program-on-python-for-you-that-can-forecast-securities.html'>Create A Program On Python For You That Can Foreca...</a></li>
+<li><a href='961111-ahmedabosayed-do-a-full-data-analysis-project-with-report-and-code.html'>A Full Data Analysis Project With Report And Code</a></li>
+<li><a href='384310-sripra9007-solve-all-your-excel-sheet-issues.html'>Provide Best Service In Excel, Macro, Vba, Formula...</a></li>
+<li><a href='431412-syafiquehalib-fast-orthophoto-dsm-for-drone-images-and-geotiff-optimization-for-web-services.html'>Produce Orthophoto Dsm From Drone Images, Geotiff ...</a></li>
+<li><a href='351206-umairkhankaker-do-python-machine-learning-and-ai-tasks.html'>Python Machine Learning And Ai Tasks</a></li>
+<li><a href='860825-expertexcel863-do-web-scrapping-using-excel-vba.html'>Web Scraping Using Excel Vba</a></li>
+<li><a href='774184-jawadarshad007-do-anything-on-excel-and-word.html'>Anything On Excel And Word Templates Macros Vba Fo...</a></li>
+<li><a href='513375-adishukla9-be-your-brilliant-web-scraper-and-virtual-assistant.html'>Your Brilliant Web Scraper,Data Miner And Virtual ...</a></li>
+<li><a href='146191-avijop1-scrape-google-maps-for-unique-business-leads.html'>Scrape Google Maps Business Leads With Emaiil</a></li>
+<li><a href='585386-bushra-memon495-do-python-data-analysis-and-jupyter-notebook-assignments.html'>Python Data Analysis Using Jupyter Notebook</a></li>
+<li><a href='375762-fivestar-5-do-correlation-regression-chi-square-anova-using-spss.html'>Correlation, Regression, Chi Square, Anova And T T...</a></li>
+<li><a href='881623-aceprograming-create-a-python-chatbot-suited-to-your-liking.html'>Create A Custom Virtual Assistant With Ai Technology</a></li>
+<li><a href='292422-rohit-8802-do-web-scraping-data-mining-and-data-extraction.html'>Web Scraping, Data Mining And Data Extraction</a></li>
+<li><a href='529951-imtiaz--ahmad-do-structural-equation-modelling-using-amos-lisrel-or-stata.html'>Structural Equation Modelling Using Amos, Lisrel,S...</a></li>
+<li><a href='848333-olowoyo1-do-statistical-and-econometric-analysis-with-eviews-stata.html'>Data Analysis With Eview, Stata, Spss Amos, Nvivo,...</a></li>
+<li><a href='151036-stat-pro-do-statistical-data-analysis-using-spss-excel-r-sas.html'>Statistical Data Analysis Using Spss, Excel, R, SAS</a></li>
+<li><a href='403082-cs-development-provide-excellent-service-in-excel-macro-vba-formula.html'>Provide Excellent Service In Excel, Macro, Vba, Fo...</a></li>
+<li><a href='654855-ammadshaikh1-create-a-custom-microsoft-excel-spreadsheet-with-functions-formulas.html'>Create A Custom Microsoft Excel Spreadsheet With F...</a></li>
+<li><a href='205581-asmeramen-web-scrapping-with-python.html'>Web Scraping And Data Mining With Python</a></li>
+<li><a href='835158-annie-transcr-do-python-programming-for-your-machine-learning-projects.html'>Python Programming For Your Machine Learning Projects</a></li>
+<li><a href='475699-mandeep2510-do-best-data-scraping-data-entry-work-in-the-given-time.html'>Get Best Data Scraping Data Entry Work In The Give...</a></li>
+<li><a href='632976-arslan00001-do-panel-and-time-series-data-analysis-with-eviews-and-stata.html'>Panel And Time Series Data Analysis Using Eviews A...</a></li>
+<li><a href='965735-zmahsyari-do-any-data-analysis.html'>Any Data Analysis</a></li>
+<li><a href='417178-dpumarino-create-sheet-dashboard-automated-process-on-google-sheets.html'>Create Sheet, Dashboard, Automated Process On Goog...</a></li>
+<li><a href='862062-kennyhcw-make-an-excel-tool-to-solve-any-optimization-problem-for-you.html'>Make An Excel Tool To Solve Any Optimization Probl...</a></li>
+<li><a href='546327-amanemon-provide-spss-excel-data-entry-service-for-you.html'>Data Entry On Spss, Excel, Google Survey</a></li>
+<li><a href='588577-szlatko-create-compare-pivot-data-using-excel-functions.html'>Create,Compare,Pivot  Data  Using Excel Functions</a></li>
+<li><a href='141183-dilshad-khaliq-do-data-analysis-data-mining-using-python.html'>Data Analysis, Data Mining And Web Scraping Using ...</a></li>
+<li><a href='855993-jaimin-vaghani-specialized-in-connect-api-with-google-sheet.html'>Connect Any API With Google Sheet</a></li>
+<li><a href='868140-hexperto-do-task-basic-and-advanced-excel-tasks.html'>Basic And Advanced Excel Tasks</a></li>
+<li><a href='747584-aliikhlaq-construct-a-custom-microsoft-excel-spreadsheet.html'>Construct A Custom Microsoft Excel Spreadsheet</a></li>
+<li><a href='376415-humzazarrar313-skip-trace-web-research-data-mining-using-top-real-estate.html'>Provide  Skip Tracing Service By Tloxp With Proof</a></li>
+<li><a href='518349-mianasim-finish-your-excel-assignments-with-perfection.html'>Finish Your Excel Assignments With Perfection</a></li>
+<li><a href='524049-raousama7-do-your-every-type-of-work-on-data-excel-or-anything-else.html'>Your Every Type Of Work On Data Excel Or Anything ...</a></li>
+<li><a href='191776-tariqramzan2002-create-excel-spread-sheet.html'>Create Professional Excel Spreadsheet</a></li>
+<li><a href='416233-harry-jack123-provide-solar-design-on-pvsyst.html'>Provide Solar Design On Pvsyst</a></li>
+<li><a href='118422-harishsheth-provide-outstading-service-in-ms-excel-word-and-power-point.html'>Provide Outstading Service In Ms Excel, Word And P...</a></li>
+<li><a href='783249-sallysydney-do-statistics-analysis-and-interpretation-using-excel-spss.html'>Statistics Analysis And Interpretation Using Excel...</a></li>
+<li><a href='922677-saqlainriaz498-do-your-data-entry-work-using-python.html'>Your Data Entry Work  On Excel Using Python</a></li>
+<li><a href='304615-kumarneel-do-300-excel-rows-data-entry.html'>200 Excel Rows Data Entry</a></li>
+<li><a href='161160-sarahbrooks13-analyse-any-data-you-need-help-with.html'>Analyse Any Data You Need Help With</a></li>
+<li><a href='247297-mohammadsaaad-make-interesting-and-attractive-dashboards.html'>Make Interesting And Attractive Dashboards</a></li>
+<li><a href='388679-raza506-do-web-scraping-of-almost-any-websites.html'>Web Scraping And Data Extraction</a></li>
+<li><a href='872104-abhi-shek-24-image-and-data-labelling-annotation.html'>Annotate Image And Data Labelling</a></li>
+<li><a href='128646-kank03-create-dynamic-professional-dashboard-reports-on-power-bi.html'>Create Dynamic Professional Dashboard Reports On P...</a></li>
+<li><a href='920312-alexrob3rts-create-beautiful-2d-and-3d-plots-in-mathematica-and-latex.html'>Create Beautiful 2D And 3D Plots In Mathematica An...</a></li>
+<li><a href='386539-sarah-iw-can-do-statistical-data-analyses-with-spss-r-and-excel.html'>Your Statistical Data Analyses With Spss R And Excel</a></li>
+<li><a href='897280-obuchela-collect-analyze-and-visualize-data-timely-and-accurately.html'>Collect, Analyze, And Visualize Data Timely And Ac...</a></li>
+<li><a href='292679-aqsaqadir44-do-python-project-data-analysis-ml-and-dl-project.html'>Data Analysis, Machine Learning And Deep Learning ...</a></li>
+<li><a href='350461-iqbalspacian-ndvi-ndwi-ndsi-ndwi-and-satellite-image-processing.html'>Time Series Land Use Land Cover Change Detection U...</a></li>
+<li><a href='416750-teeottun-develop-mobile-web-and-desktop-applications.html'>Data Science Machine Learning Tasks In Python, Ker...</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='/index.html'>
+June
+</a>
+<span class='post-count' dir='ltr'>(81)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='/index.html'>
+May
+</a>
+<span class='post-count' dir='ltr'>(235)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='/index.html'>
+April
+</a>
+<span class='post-count' dir='ltr'>(15)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='https://www.blogger.com/rearrange?blogID=1440079477592342156&amp;widgetType=BlogArchive&amp;widgetId=BlogArchive1&amp;action=editWidget&amp;sectionId=sidebar-right-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive1"));' rel='nofollow' target='configBlogArchive1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget Profile' data-version='1' id='Profile1'>
+<h2>About Me</h2>
+<div class='widget-content'>
+<dl class='profile-datablock'>
+<dt class='profile-data'>
+<a class='profile-name-link g-profile' href='https://www.blogger.com/profile/07424820085099638930' rel='author' style='background-image: url(//www.blogger.com/img/logo-16.png);'>
+FiverrMan
+</a>
+</dt>
+</dl>
+<a class='profile-link' href='https://www.blogger.com/profile/07424820085099638930' rel='author'>View my complete profile</a>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='https://www.blogger.com/rearrange?blogID=1440079477592342156&amp;widgetType=Profile&amp;widgetId=Profile1&amp;action=editWidget&amp;sectionId=sidebar-right-1' onclick='return _WidgetManager._PopupConfig(document.getElementById("Profile1"));' rel='nofollow' target='configProfile1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div></div>
+</aside>
+</div>
+</div>
+</div>
+<div style='clear: both'></div>
+<!-- columns -->
+</div>
+<!-- main -->
+</div>
+</div>
+<div class='main-cap-bottom cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+<footer>
+<div class='footer-outer'>
+<div class='footer-cap-top cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left footer-fauxborder-left'>
+<div class='fauxborder-right footer-fauxborder-right'></div>
+<div class='region-inner footer-inner'>
+<div class='foot no-items section' id='footer-1'></div>
+<table border='0' cellpadding='0' cellspacing='0' class='section-columns columns-2'>
+<tbody>
+<tr>
+<td class='first columns-cell'>
+<div class='foot no-items section' id='footer-2-1'></div>
+</td>
+<td class='columns-cell'>
+<div class='foot no-items section' id='footer-2-2'></div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- outside of the include in order to lock Attribution widget -->
+<div class='foot section' id='footer-3' name='Footer'><div class='widget Attribution' data-version='1' id='Attribution1'>
+<div class='widget-content' style='text-align: center;'>
+Powered by <a href='https://www.blogger.com' target='_blank'>Blogger</a>.
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='https://www.blogger.com/rearrange?blogID=1440079477592342156&amp;widgetType=Attribution&amp;widgetId=Attribution1&amp;action=editWidget&amp;sectionId=footer-3' onclick='return _WidgetManager._PopupConfig(document.getElementById("Attribution1"));' rel='nofollow' target='configAttribution1' title='Edit'>
+<img alt='' height='18' src='https://resources.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+</div>
+</div>
+<div class='footer-cap-bottom cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+</footer>
+<!-- content -->
+</div>
+</div>
+<div class='content-cap-bottom cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+</div>
+<script type='text/javascript'>
+    window.setTimeout(function() {
+        document.body.className = document.body.className.replace('loading', '');
+      }, 10);
+  </script>
+<script src='https://apis.google.com/js/plusone.js' type='text/javascript'></script>
+
+<script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/1260092809-widgets.js"></script>
+<script type='text/javascript'>
+window['__wavt'] = 'AOuZoY6OIUXUPnPN-NVn2-y898tO1RoSoA:1595793430048';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d1440079477592342156','//data-analysis-and-reports.blogspot.com/2020/07/588577-szlatko-create-compare-pivot-data-using-excel-functions.html','1440079477592342156');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '1440079477592342156', 'title': 'Data Analysis \x26amp; Reports', 'url': 'https://data-analysis-and-reports.blogspot.com/2020/07/588577-szlatko-create-compare-pivot-data-using-excel-functions.html', 'canonicalUrl': 'https://data-analysis-and-reports.blogspot.com/2020/07/588577-szlatko-create-compare-pivot-data-using-excel-functions.html', 'homepageUrl': 'https://data-analysis-and-reports.blogspot.com/', 'searchUrl': 'https://data-analysis-and-reports.blogspot.com/search', 'canonicalHomepageUrl': 'https://data-analysis-and-reports.blogspot.com/', 'blogspotFaviconUrl': 'https://data-analysis-and-reports.blogspot.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'isDynamicViewsAvailable': true, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22Data Analysis \x26amp; Reports - Atom\x22 href\x3d\x22https://data-analysis-and-reports.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22Data Analysis \x26amp; Reports - RSS\x22 href\x3d\x22https://data-analysis-and-reports.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22Data Analysis \x26amp; Reports - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/1440079477592342156/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22Data Analysis \x26amp; Reports - Atom\x22 href\x3d\x22https://data-analysis-and-reports.blogspot.com/feeds/7969638200133715231/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'ieCssRetrofitLinks': '\x3c!--[if IE]\x3e\x3cscript type\x3d\x22text/javascript\x22 src\x3d\x22https://www.blogger.com/static/v1/jsbin/4118812863-ieretrofit.js\x22\x3e\x3c/script\x3e\n\x3c![endif]--\x3e', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/6ca3d1747898a906', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'disableGComments': true, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'Twitter', 'key': 'twitter', 'shareMessage': 'Share to Twitter', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 300, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'item', 'postId': '7969638200133715231', 'postImageThumbnailUrl': 'https://4.bp.blogspot.com/-YMr5ndAaZJg/Xwu3OEaHdOI/AAAAAAAALec/bc-jS9QKZBEUjPUta55VIzHUV0v4NK7NgCLcBGAsYHQ/s72-c/create-compare-pivot-data-using-excel-functions.jpg', 'postImageUrl': 'https://4.bp.blogspot.com/-YMr5ndAaZJg/Xwu3OEaHdOI/AAAAAAAALec/bc-jS9QKZBEUjPUta55VIzHUV0v4NK7NgCLcBGAsYHQ/s400/create-compare-pivot-data-using-excel-functions.jpg', 'pageName': 'Create,Compare,Pivot  Data  Using Excel Functions', 'pageTitle': 'Data Analysis \x26amp; Reports: Create,Compare,Pivot  Data  Using Excel Functions'}}, {'name': 'features', 'data': {'sharing_get_link_dialog': 'true', 'sharing_native': 'false'}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'Create,Compare,Pivot  Data  Using Excel Functions', 'description': '          About:   I will do anything you need in a excel spreadsheet. To name the top: 1.Pivot table 2.Filters 3.Conditional formating 4. F...', 'featuredImage': 'https://4.bp.blogspot.com/-YMr5ndAaZJg/Xwu3OEaHdOI/AAAAAAAALec/bc-jS9QKZBEUjPUta55VIzHUV0v4NK7NgCLcBGAsYHQ/s400/create-compare-pivot-data-using-excel-functions.jpg', 'url': 'https://data-analysis-and-reports.blogspot.com/2020/07/588577-szlatko-create-compare-pivot-data-using-excel-functions.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 7969638200133715231}}]);
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/196750399-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/368954415-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PopularPostsView', new _WidgetInfo('PopularPosts1', 'sidebar-right-1', document.getElementById('PopularPosts1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_FeaturedPostView', new _WidgetInfo('FeaturedPost1', 'sidebar-right-1', document.getElementById('FeaturedPost1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar-right-1', document.getElementById('BlogArchive1'), {'languageDirection': 'ltr', 'loadingMessage': 'Loading\x26hellip;'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ProfileView', new _WidgetInfo('Profile1', 'sidebar-right-1', document.getElementById('Profile1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AttributionView', new _WidgetInfo('Attribution1', 'footer-3', document.getElementById('Attribution1'), {}, 'displayModeFull'));
+</script>
+</body>
+</html>
